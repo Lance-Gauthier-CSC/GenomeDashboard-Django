@@ -20,7 +20,7 @@
                 </div>
                 <script> testFunction("session_btn"); </script>
                 <div class="panel session_panel" id="session_div">
-                        <b>Save Key:</b> {{ SaveKey }} <br>
+                        <b>Save Key:</b> {{ session_id }} <br>
                         <!--<b>Session ID:</b> 0ba7591b-ef1b-44a8-b716-f7a2e9e448a6 <br>-->
                         <b>Data:</b> {{ data }} <br>
                         <b>File:</b> {{ file }} <br>
@@ -31,7 +31,7 @@
                                 </div>
                                 <form action="/" method="post" enctype="multipart/form-data">
                                         {% csrf_token %}
-                                        <input type="file" name="modelFile" />
+                                        <input type="file" name="file" />
                                         <button type="submit" name="submit"> Upload </button>
                                 </form>
                         </div>
