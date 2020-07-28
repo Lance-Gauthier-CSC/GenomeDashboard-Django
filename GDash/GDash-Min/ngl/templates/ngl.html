@@ -1,0 +1,36 @@
+<!DOCTYPE HMTL>
+<head>
+  Hello! jsmol coming soon
+  {% load static %}
+  <!--<script type="text/javascript" src="{% static 'javascript/JSmol.min.js' %}" ></script>-->
+  <script>
+      var path = "{% static 'media/j2s' %}";
+  </script>
+
+  {% load static %}
+  <script type="text/javascript">
+    var Info = {
+      width: 500,
+      height: 500,
+      j2sPath: path,
+    }
+    </script>
+</head>
+<body>
+  {{ file }}
+  <script src="{% static 'javascript/ngl.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var stage = new NGL.Stage("viewport");
+      //stage.loadFile("rcsb://1crn", {defaultRepresentation: true});
+      stage.loadFile("{% static 'media/tiny.pdb' %}", {defaultRepresentation: true}).then(function (component) {
+        // add a "cartoon" representation to the structure component
+        component.addRepresentation("cartoon");
+        // provide a "good" view of the structure
+        component.autoView();
+      });
+    });
+  </script>
+  <div id="viewport" style="width:400px; height:300px;"></div>
+</body>
+<meta charset="utf-8">

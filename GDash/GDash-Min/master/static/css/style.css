@@ -1,0 +1,249 @@
+body {
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+}
+
+#control {
+  width: 85%;
+  height: 100%;
+}
+
+#title {
+  display: flex;
+  margin-left: 50%;
+  font-size: 50px;
+  height: 10%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#sidebar {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  height: 100%;
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#session_div {
+  margin-left: 25%;
+}
+
+#build_div {
+  margin-left: 33%;
+}
+
+#build2_div {
+  margin-left: 25%;
+}
+
+#analyze_div {
+  margin-left: 25%;
+}
+
+.button {
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid;
+  border-color:  rgb(90,90,90);
+  outline: none;
+  height: 20%;
+  background: none;
+}
+
+.button.chosen {
+  background-color: rgb(90,90,90);
+}
+
+.button:hover {
+  background-color: rgb(90,90,90);;
+}
+
+.option {
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid;
+  border-color:  rgb(90,90,90);
+  outline: none;
+  height: 20%;
+  background: none;
+  cursor: pointer;
+}
+
+.fill-white {
+  width: 10%;
+  height: 10%;
+  top: 0;
+  right: 0;
+  /* filter: invert(100%); */
+}
+
+.panel {
+  display: none;
+  margin-left: 15%;
+  margin-top: 5%;
+  width: 85%;
+  height: 100%;
+  font-family: Arial;
+}
+
+.grid-container {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 25%;
+  grid-row-gap: 100px;
+}
+
+.grid-item {
+  background-color: white;
+}
+
+.build-title {
+  font-size: 40px;
+  color: black;
+}
+
+.build-subtitle {
+  font-size: 20px;
+  color: black;
+}
+
+.custom-select {
+  width: 30%;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #e3e3e3;
+  padding: 6px 6px 6px 6px;
+  display: inline-block;
+  float: left;
+}
+
+.custom-select.t {
+  margin-left: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(90, 90, 90, 1);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  /* top: -10px;
+  left: 105%; */
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(90, 90, 90, 1) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.build_button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 20px;
+  padding: 0.3rem 0.5rem;
+  background: #86b32d;
+  border-bottom: 1px solid #5d7d1f;
+  color: white;
+  margin: 0.2rem 0.25rem;
+  text-align: center;
+}
+
+.build_button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.build2_button {
+        display: inline-block;
+        border-radius: 3px;
+        font-size: 24px;
+        background: #A6A2A4;
+        border: 1px solid #000000;
+        color: black;
+        text-align: center;
+}
+.build2_button:hover {
+        opacity: 0.75;
+        cursor: pointer;
+}
+
+/* --> Dropdown Button <------------------------------------------------------------------------------------------------------------------------- */
+.dropbtn {
+        display: inline-block;
+        border-radius: 3px;
+        font-size: 24px;
+        background: #A6A2A4;
+        border: 1px solid #000000;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+        opacity: 0.75;
+        cursor: pointer;
+}
+.dropdown {
+        position: relative;
+        display: inline-block;
+}
+.dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        max-height: 120px;
+        overflow: scroll;
+        overflow-x: hidden;
+}
+.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+}
+.dropdown a:hover {background: #ddd;}
+.show {display: block;}

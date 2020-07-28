@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<title> G-Dash </title>
+<script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+<script>window.LogRocket && window.LogRocket.init('re9q97/gdash');</script>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<script type="text/javascript" src="{% static 'javascript/functions.js' %}"></script>
+<body>
+        <div id="control">
+                <!--div id="title"> <b>Genome Dashboard</b> </div>-->
+                <img src="{% static 'media/GDashLOGO.png' %}" class="logo" alt="Genome Dashboard" style="width:25%; margin-left: 55%;">
+                <div id="sidebar">
+                        <button class="button session" id="session_btn" onclick="showPanel(this.id)"> Session </button>
+                        <button class="button build" id="build_btn" onclick="showPanel(this.id)"> ICM </button>
+                        <button class="button build2" id="build2_btn" onclick="showPanel(this.id)"> VDNA </button>
+                        <button class="button analyze" id="analyze_btn" onclick="showPanel(this.id)"> Analyze </button>
+                        <button class="option dalliance" id="dalliance" onclick="chooseOption(this.id)"> Dalliance <img src="{% static 'media/newTab.svg' %}" class="fill-white" alt="new tab"></button>
+                        <button class="option jsmol" id="ngl" onclick="chooseOption(this.id)"> NGL <img src="{% static 'media/newTab.svg' %}" class="fill-white" alt="new tab"></button>
+                </div>
+                <script> testFunction("session_btn"); </script>
+                <div class="panel session_panel" id="session_div">
+                        <b>Save Key:</b> {{ SaveKey }} <br>
+                        <!--<b>Session ID:</b> 0ba7591b-ef1b-44a8-b716-f7a2e9e448a6 <br>-->
+                        <b>Data:</b> {{ data }} <br>
+                        <b>File:</b> {{ file }} <br>
+
+                        <div style="display: flex;"> 
+                                <div style="padding-right: 10px;">
+                                        <b>Upload Model:</b>
+                                </div>
+                                <form action="/" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <input type="file" name="modelFile" />
+                                        <button type="submit" name="submit"> Upload </button>
+                                </form>
+                        </div>
+                        <div style="margin-left: 30%;">
+                                <h1>CURRENT PARAMETERS:</h1>
+                                <p>Tilt: {{ Tilt }} | Roll: {{ Roll }} | Twist: {{ Twist }}</p><br>
+                                <p>Shift: {{ Shift }} | Slide: {{ Slide }} | Rise: {{ Rise }}</p><br>
+                                <p>Max S: {{ MaxS }} | Lk: {{ Lk }} | Nuc: {{ Nuc }}</p><br>
+                                <p>V1: {{ V1 }} | V2: {{ V2 }} | Cores: {{ Cores }}</p>
+                                <p>Geometry: {{ Geometry }}</p>
+                        </div>
+                </div>
+                <div class="panel build_panel" id="build_div">
+                        {% include 'ICM.html' %}
+                </div>
+                <div class="panel build2_panel" id="build2_div">
+                        {% include 'VDNA.html' %}
+                </div>
+                <div class="panel analyze_panel" id="analyze_div">
+                        <div style="display: flex; justify-content: space-around;">
+                                <img src="{% static 'media/twoangle.png' %}" class="analyze-img angles" alt="Two Angle Map" style="width: 25%">
+                                <img src="{% static 'media/des.png' %}" class="analyze-img des" alt="DES" style="width: 35%">
+                                <img src="{% static 'media/heatmap.png' %}" class="analyze-img heatmap" alt="Heatmap" style="width: 25%">
+                        </div>
+                </div>
+        </div>
+        <script>
+                showPanel("session_btn");
+        </script>
+</body>

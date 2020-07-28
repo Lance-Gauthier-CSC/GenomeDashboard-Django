@@ -1,0 +1,91 @@
+
+<div class="grid-container">
+        <div class="grid-item">
+                <div class="select model">
+                        <div class="build-title"> Type of Model </div>
+                        <form id="model">
+                                <input type="radio" id="dna" name="model" value="dna">
+                                <label class="tooltip" for="dna">
+                                        DNA
+                                        <span class="tooltiptext"> Free DNA molecules without nucleosomes </span>
+                                </label><br>
+                                <input type="radio" id="uniform" name="model" value="uniform" checked>
+                                <label class="tooltip" for="uniform">
+                                        Uniform
+                                        <span class="tooltiptext"> Chromatin model with nucleosomes uniformly distributed </span>
+                                </label><br>
+                                <input type="radio" id="track" name="model" value="track">
+                                <label class="tooltip" for="uniform">
+                                        Track
+                                        <span class="tooltiptext"> Chromatin model with nucleosome positioning from tracks information </span>
+                                </label><br>
+                                <input type="radio" id="auto" name="model" value="auto">
+                                <label class="tooltip" for="uniform">
+                                        Auto
+                                        <span class="tooltiptext"> Chromatin model automatically places nucleosomes in the energy landscape </span>
+                                </label><br>
+                        </form>
+                </div>
+        </div>
+        <div class="grid-item">
+                <div class="select options">
+                        <div class="build-title"> Options </div>
+                        <div class="build-subtitle">
+                                <b>&#x03A6;:</b> Phase shift for uniform positioning. <br>
+                                <b>Lk:</b> Linker length.
+                        </div><br>
+                        <label for="phi"> &#x03A6;: </label>
+                        <input type="number" id="phi" name="phi" value="0">
+                        <label for="lk"> Lk: </label>
+                        <input type="number" id="lk" name="lk" value="0">
+                </div>
+        </div>
+        <div class="grid-item">
+                <div class="select global_vars">
+                        <div class="build-title"> Global Variables </div>
+                        <div class="build-subtitle">
+                                <b>K:</b> K is stiffness. <br>
+                                <b>X:</b> X is Free DNA Geometry. <br>
+                                <b>MD-B/IdealB:</b> Lankas2003. <br>
+                                <b>XrayB/XrayP:</b> Olson1998. <br>
+                                <b>T:</b> Temperature in K.
+                        </div><br>
+                        <select class="custom-select k" id="kx" name="kx">
+                                <option value="0">Select K/X:</option>
+                                <option value="mdb">MD-B</option>
+                                <option value="xrayb">XrayB</option>
+                                <option value="xrayp">XrayP</option>
+                                <option value="idealb">idealB</option>
+                        </select>
+                        <select class="custom-select t" id="temp" name="temp">
+                                <option value="0">Select T:</option>
+                                <option value="1">0.0</option>
+                                <option value="100">100.0</option>
+                                <option value="200">200.0</option>
+                                <option value="300">300.0</option>
+                        </select>
+                </div>
+        </div>
+        <div class="grid-item">
+                <div class="select model-build">
+                        <div class="build-title"> Model Build </div>
+                        <div class="build-subtitle">
+                                Choose between All-Atom and Coarse-Grained
+                        </div>
+                        <form id="build">
+                                <input type="radio" id="atom" name="model-build" value="atom" checked>
+                                <label class="tooltip" for="atom">
+                                        All-Atom
+                                        <span class="tooltiptext"> All Atom Model is availible under 1500 base pairs </span>
+                                </label><br>
+                                <input type="radio" id="coarse" name="model-build" value="coarse">
+                                <label class="tooltip" for="coarse">
+                                        Coarse-Grained
+                                        <span class="tooltiptext"> Coarse-Grained Model is availible under 30000 base pairs, blue beads: the histone core of nucleosomes, yellow beads: DNA with 5 base pairs resolution. </span>
+                                </label><br>
+                        </form>
+                </div><br><br><br><br>
+                <button class="build_button" id="buildmodel" style="float:right;">Build Model</button>
+                <button class="build_button" id="rebuild" style="float:left;">Rebuild</button>
+        </div>
+</div>

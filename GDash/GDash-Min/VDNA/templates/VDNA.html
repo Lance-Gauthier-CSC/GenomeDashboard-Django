@@ -1,0 +1,42 @@
+<!-- Error Submission Messages -->
+<p><b>{{ Errors }}</b> {{ Tilt_E }} {{ Roll_E }} {{ Twist_E }} {{ Shift_E }} {{ Slide_E }} {{ Rise_E }} {{ MaxS_E }} {{ Lk_E }} {{ Nuc_E }} {{ V1Strng_E }} {{ V2Strng_E }} {{ Cores_E }}</p>
+<div>
+        <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Forms for Inter Helical Parameters --> 
+                <div style="float: left; width: 90%;">
+                        {{ formset.as_p }}
+                </div>
+                <div style="float: right; width: 10%;">
+                        <input type="submit" name="Straight" value="Straight">
+                        <input type="submit" name="Bend(Roll)" value="Bend(Roll)">
+                        <input type="submit" name="Bend(Tilt)" value="Bend(Tilt)">
+                        <input type="submit" name="Tilt-a-gon" value="Tilt-a-gon">
+                        <input type="submit" name="Roll-a-gon" value="Roll-a-gon">
+                        <input type="submit" name="RollTilt-a-gon" value="RollTilt-a-gon">
+                        <input type="submit" name="Shear(Shift)" value="Shear(Shift)">
+                        <input type="submit" name="Shear(Slide)" value="Shear(Slide)">
+                        <input type="submit" name="Twist(DNA)" value="Twist(DNA)">
+                        <input type="submit" name="Untwisted DNA" value="Untwisted DNA">
+                        <input type="submit" name="Circle(Roll)" value="Circle(Roll)">
+                        <input type="submit" name="Circle(Tilt)" value="Circle(Tilt)">
+                        <input type="submit" name="Circular DNA" value="Circular DNA">
+                        <input type="submit" name="Torsion Helix(+)" value="Torsion Helix(+)">
+                        <input type="submit" name="Torsion Helix(-)" value="Torsion Helix(-)">
+                        <input type="submit" name="Shear Helix(+)" value="Shear Helix(+)">
+                        <input type="submit" name="Shear Helix(-)" value="Shear Helix(-)">
+                        <input type="submit" name="Thermal" value="Thermal">
+                        <input type="submit" name="Trajectory" value="Trajectory">
+                        <input type="submit" name="Chromatin1" value="Chromatin1">
+                        <input type="submit" name="Chromatin2" value="Chromatin2">
+                        <input type="submit" name="Default" value="Default">
+                </div>
+                <div>
+                        <input type="submit" name="parameter_form" value="Save Parameters">
+                        <input type="submit" name="Reset_All" value="Reset All">
+                        <input type="submit" name="parameter_form" value="Draw It">
+                        <input type="submit" name="Reset_All" value="Plot Parameters">
+                        <input type="submit" name="parameter_form" value="Make Molecule">
+                </div>
+        </form>
+</div>
