@@ -6,4 +6,5 @@ A web-based genome dashboard that follows the django-python framework. This geno
 
 ##
 **Links:**
-- TBD
+- https://www.biorxiv.org/content/10.1101/803403v1.full.pdf
+- https://dna.engr.latech.edu/~gdash/GDash-landing-page/
